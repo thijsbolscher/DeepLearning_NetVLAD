@@ -1,14 +1,37 @@
+###NetVLAD
+##Reproduction Project CS4240 Deep Learning
+
+Xander van Beurden & Thijs Bolscher
+
+##1 Introduction
+The goal of the original NetVLAD project, was to quickly and accurately recognize the location where a picture is taken. To do so, a new generalized VLAD (Vector of Locally Aggregated Descriptors) layer was developed. This layer was named NetVLAD. This NetVLAD layer can simply be added to existing CNN structures such as AlexNet and VGG-16. For training & backpropagation to be executed, the authors came up with a smart weakly supervised ranking loss. The idea is to finally use the Google Street View Time Machine, so that locations where pictures are taken can be accurately placed over the whole world. 
+This project showed really promising outcomes on two benchmark datasets, including pictures taken in the Tokyo and Pittsburgh regions. From the figure below the challenge of place recognition already becomes clear. A well-performing place recognizer should be able to look through variability such as changing seasons, night/day, construction work and much more. 
+
+![Image](/images/comparison.png)
+
+In summary, the most important building blocks of this reproducibility project are: 
+- Loading in the data 
+- Building the NetVLAD layer
+- Using clusters and obtaing clustering centroids
+- Attaching potential positives and definite negatives to all training queries based on distance in the real world
+- Finding the best potential positive and worst definite negatives through comparison of the feature vectors
+- Implementing the loss function and using these (Query, Pos, Neg) structure to train the network
 
 
+During this project we attempted to reproduce the accuracy measurements done in the paper. Unfortunately, due to the many roadblocks we hit upon, and our lack of time and especially computing power (as we will elaborate upon) we could not go all the way. However, we were able to find some promising results during training in the first few epochs. At the end of this blog post we will briefly talk about the problems we faced due to our limited experience with the field of deep learning and building such Deep Neural Networks. 
 
 
+##2 Building the NetVLAD layer
 
+##3 Clustering
 
+##4 Potential positives and definite negatives
 
+##5 Best Positives and worst negatives
 
+##6 Implementing the loss function and training
 
-
-
+##7 Us as Aerospace Engineers; the troubles we faced
 
 
 
