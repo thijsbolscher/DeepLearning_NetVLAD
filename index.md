@@ -23,20 +23,29 @@ In summary, the most important building blocks of this reproducibility project a
 During this project we attempted to reproduce the accuracy measurements done in the paper. Unfortunately, due to the many roadblocks we hit upon, and our lack of time and especially computing power (as we will elaborate upon) we could not go all the way. However, we were able to find some promising results during training in the first few epochs. At the end of this blog post we will briefly talk about the problems we faced due to our limited experience with the field of deep learning and building such Deep Neural Networks. 
 
 
-##2 Building the NetVLAD layer
+
+##2 Loading in the data
+
+
+##3 Building the NetVLAD layer
+The building of the NetVLAD layer was quite a smooth operation. The construction of the layer is clearly explained in the paper. Moreover, for the CNNs, existing networks were directly uploaded and used as they should be. In the paper it is clearly explained what parts of the network to use and how far to train them to reach similar (accuarcy) results as the paper. 
 
 
 
+##4 Clustering
+The concept of the centroid and clustering was for a long time a hard one to grasp for us. The author of the paper really writes from a point of view where you have experience with VLAD layers or at least tasks that are similar to this place recognition task, in which 'anchors' need to be placed in the vector space to be able to compare the descriptors of different images well. Moreover, from the paper it was not at all clear to us what exactly was this (size of the) cluster set. Out of how many and out of which query images should such a cluster consist? Although in the Appendix, the number of clusters adviced is mentioned, the whole concept of this clustering was still not clear enough to us. In the end we indeed set the number of clusters to 64, and used K-means (our decision, not mentioned in the paper as well!) to find the clusters and their centroids. Finally, it was pretty hard to find whether for us to find the clusters and their centroids, the images needed to go through the CNN only, or also the NetVLAD layer.
 
-##3 Clustering
+##5 Potential positives and definite negatives
+During this course, we were warned many times that often papers use mathiness to impress rather than to explain. In this paper, when it comes to finding the potential positives and definite negatives for each query, this was definitely the case. Many terms were used to describe the same procedure over and over and these terms were never explained in plain and clear language. The best example of this is the mentioning of 'Euclidean distance', which in hindsight always referred to the geographical distance in the real world, but could have also meant a certain distance in the vector space which was so often mentioned in the NetVLAD report. 
 
-##4 Potential positives and definite negatives
 
-##5 Best Positives and worst negatives
+##6 Best Positives and worst negatives 
+This is where the vector space does clearly come in. In our opinion, the paper does a really good job at describing this process, and it is really easy to find all the hyperparameter values you need for this procedure. However, the paper does not mention what functions they use to find the most-alike and least-alike vectors in the vector space. KNN? Faiss? In most occasions we chose to use scipy's NearestNeighbors, where the more efficient faiss might save a lot of computational time. One other problem that we will elaborate upon under point 8, is that it was hard to find out where it was advisable to store variables or tensors in cache, and where not. In our opinion, it would have added a lot of value if the author would have implemented a little more information on this. At the same time we realize that within the world of Deep Learning and Computer Science, experienced coders will be able to anwer these questions themselves. With other words, it would have helped US if there was a little more basic information in the paper for us to independently reproduce it accurately, but we realize that the athor cannot describe everything in one paper.
 
-##6 Implementing the loss function and training
 
-##7 Us as Aerospace Engineers; the troubles we faced
+##7 Implementing the loss function and training
+
+##8 Us as Aerospace Engineers; the troubles we faced
 
 
 
