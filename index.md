@@ -25,6 +25,9 @@ During this project we attempted to reproduce the accuracy measurements done in 
 
 ##2 Building the NetVLAD layer
 
+
+
+
 ##3 Clustering
 
 ##4 Potential positives and definite negatives
