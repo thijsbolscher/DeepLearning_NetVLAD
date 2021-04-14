@@ -25,7 +25,7 @@ During this project we attempted to reproduce the accuracy measurements done in 
 
 
 ##2 Loading in the data
-
+The performance of NetVLAD that we focussed on was on the Pittsburgh 250k dataset. The dataset contains of 250,000 images taken in the Pittsburgh area. It was noticed that spending some time on the data in this dataset helps understanding some of the decisions made in the paper. Empirically, it was seen that the data was best put on the runtime disk memory and the RAM of the GPU could handle the running memory. It was mentioned in the paper that the data was divided into roughly three equal parts for training, testing and validation. After some research, it became apparent that this division was made by the authors and put into a .mat file that was extracted.  So before starting off with building our own dataloader, the data was retrieved from the dataset (available online) and looked at. Next, the dataloader was made. We soon realised that the dataset was too large to handle for the limited computing power and memory we had at hand (1 GPU) so the images had were resized, unlike in the paper. As it was unclear from the paper, some time also had to be invested into arranging this dataloader function as it differed for example for the query image set versus all other images.
 
 ##3 Building the NetVLAD layer
 The building of the NetVLAD layer was quite a smooth operation. The construction of the layer is clearly explained in the paper. Moreover, for the CNNs, existing networks were directly uploaded and used as they should be. In the paper it is clearly explained what parts of the network to use and how far to train them to reach similar (accuarcy) results as the paper. 
@@ -49,7 +49,15 @@ This part of the project took us quite some time to unravel - which, in hindsigh
 
 
 ##8 Us as Aerospace Engineers; the troubles we faced
+Among several implementation issues we ran into, the main issue for us as aerospace students that we ran into was the model architecture. At first, we did not oversee the scale of the image dataset (205k!!) and the issues that come with it such as memory allocation and computing time. Although the authors did a good job at explaining how to handle the memory by specifying the caching details, and tuples and batch sizes, implementing was at first a black box for us. By talking with peers studying computer science and looking at related code provided by Nanne [1], it became much clearer how to implement this. This made us realize the gap between Aerospace Engineering students and Computer Science students, which was interesting to notice. The paper lacked however to specify the hardware used and the training times that were realized. This would have helped towards making decisions for the use of training platform we would be using to upload the data to and to train from. 
 
+Concluding, for the course it is quite interesting to look at all the different deep learning methods but without being able to handle the huge amounts of data that deep learning is usually concerned with, your network will never be able to trainAs Aerospace students this was seen into practice as the paper with its methods and architecture was really clear, but we bumped into realizing the code. The choice to use Google Colab was not the right choice as we had trouble with uploading the data into the Google drive or the runtime disk memory. 
+From [2] it becomes clear that it is possible to scale down the huge amounts of data for descent performance.
+
+
+
+[1] Nanne, https://github.com/Nanne/pytorch-NetVlad
+[2] Paper 4, scaling down deep learning
 
 
 
