@@ -1,2 +1,3 @@
 # DeepLearning_NetVLAD
-Deep Learning reproduction project with Xander van Beurden
+Reproduction of the research paper _NetVLAD: CNN architecture for weakly supervised place recognition_ by Xander van Beurden & Thijs Bolscher
+
