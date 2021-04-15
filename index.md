@@ -62,7 +62,7 @@ Concluding, for the course it is quite interesting to look at all the different 
 
 
 
-[1] Nanne (2016), https://github.com/Nanne/pytorch-NetVlad
+[1] Nanne (2019), https://github.com/Nanne/pytorch-NetVlad
 
 
 
