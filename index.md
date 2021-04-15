@@ -4,6 +4,7 @@
 ## Reproduction Project CS4240 Deep Learning
 
 Xander van Beurden & Thijs Bolscher
+Link to code: https://github.com/thijsbolscher/DeepLearning_NetVLAD
 
 ## 1 Introduction
 
