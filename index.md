@@ -10,7 +10,7 @@ Xander van Beurden & Thijs Bolscher
 The goal of the original NetVLAD project, was to quickly and accurately recognize the location where a picture is taken. To do so, a new generalized VLAD (Vector of Locally Aggregated Descriptors) layer was developed. This layer was named NetVLAD. This NetVLAD layer can simply be added to existing CNN structures such as AlexNet and VGG-16. For training & backpropagation to be executed, the authors came up with a smart weakly supervised ranking loss. The idea is to finally use the Google Street View Time Machine, so that locations where pictures are taken can be accurately placed over the whole world. 
 This project showed really promising outcomes on two benchmark datasets, including pictures taken in the Tokyo and Pittsburgh regions. From the figure below the challenge of place recognition already becomes clear. A well-performing place recognizer should be able to look through variability such as changing seasons, night/day, construction work and much more. 
 
-![alt text](https://github.com/thijsbolscher/DeepLearning_NetVLAD/tree/main/images/comparison.png)
+![Image](https://github.com/thijsbolscher/DeepLearning_NetVLAD/tree/main/images/comparison.png)
 
 In summary, the most important building blocks of this reproducibility project are: 
 - Loading in the data 
