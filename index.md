@@ -1,4 +1,3 @@
-```markdown
 
 ### NetVLAD
 
@@ -64,7 +63,7 @@ From [2] it becomes clear that it is possible to scale down the huge amounts of 
 
 
 
-```
+
 
 
 
