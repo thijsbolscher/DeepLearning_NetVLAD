@@ -5,7 +5,7 @@
 
 Xander van Beurden & Thijs Bolscher
 
-Link to code: https://github.com/thijsbolscher/DeepLearning_NetVLAD
+Link to code: https://github.com/xvanbeurden/Deep_learning/blob/main/Main.ipynb
 
 ## 1 Introduction
 
@@ -49,20 +49,20 @@ This is where the vector space does clearly come in. In our opinion, the paper d
 ## 7 Implementing the loss function and training
 This part of the project took us quite some time to unravel - which, in hindsight, was not needed. The well-explained theory behind the loss function makes it easy to understand what the author wants, but not necessarily how to implement this in code. Turns out that Pytorch has a function called 'TripletMarginLoss' which does all the work for you, as long as you give the function the margin you have in mind, and this margin value is once again clearly mentioned in Appendix A.
 
+During training, the model took approximately 10 hours to run an entire epoch and before the results were tested and the accuracy of our model was determined, we reached the training time limit from Google Colaboratory. However, as can be seen in our uploaded code, training happened and our loss was decreasing but after putting too much effort into decreasing training time and increasing possible running time it was too late to test the accuracy of the model at the end of one epoch. 
+
 
 
 
 ## 8 Us as Aerospace Engineers; the troubles we faced
-Among several implementation issues we ran into, the main issue for us as aerospace students that we ran into was the model architecture. At first, we did not oversee the scale of the image dataset (205k!!) and the issues that come with it such as memory allocation and computing time. Although the authors did a good job at explaining how to handle the memory by specifying the caching details, and tuples and batch sizes, implementing was at first a black box for us. By talking with peers studying computer science and looking at related code provided by Nanne [1], it became much clearer how to implement this. This made us realize the gap between Aerospace Engineering students and Computer Science students, which was interesting to notice. The paper lacked however to specify the hardware used and the training times that were realized. This would have helped towards making decisions for the use of training platform we would be using to upload the data to and to train from. 
+Among several implementation issues we ran into, the main issue for us as aerospace students that we ran into was the model architecture. At first, we did not oversee the scale of the image dataset (205k!!) and the issues that come with it such as memory allocation and computing time. Although the authors did a good job at explaining how to handle the memory by specifying the caching details, and tuples and batch sizes, implementing was at first a black box for us. By talking with peers studying computer science and looking at related code provided by Nanne [1], it became much clearer how to implement this. This made us realize the gap between Aerospace Engineering students and Computer Science students, which was interesting to notice. As the Aerospace industry is also moving towards data-driven decision-making, our curriculum is maybe lagging a bit behind. The paper lacked however to specify the hardware used and the training times that were realized. This would have helped towards making decisions for the use of training platform we would be using to upload the data to and to train from. 
+Finally, the decision was made to train the network with Google Colaboratory placing the image dataset in the runtime memory, using the wget function from Python. After resizing the images to 100x100, the model would still take 10 hours to run one epoch and as such, unfortunately no concrete results are published as Google would kick us out. We must have realized earlier in the process that it is quite easy to save the (updated parameters of the) model such that even though your model does not finish training, the latest model can be used for testing. Unfortunately, the authors made the data no longer available in the last couple of days, such that we could not downscale the number of images and rigorously decrease training time. 
 
-Concluding, for the course it is quite interesting to look at all the different deep learning methods but without being able to handle the huge amounts of data that deep learning is usually concerned with, your network will never be able to trainAs Aerospace students this was seen into practice as the paper with its methods and architecture was really clear, but we bumped into realizing the code. The choice to use Google Colab was not the right choice as we had trouble with uploading the data into the Google drive or the runtime disk memory. 
-From [2] it becomes clear that it is possible to scale down the huge amounts of data for descent performance.
+Concluding, for the course it is quite interesting to look at all the different deep learning methods but without being able to handle the huge amounts of data that deep learning is usually concerned with, your network will never be able to train. As Aerospace students this was seen into practice as the paper with its methods and architecture was really clear, but we bumped into realizing the code. We realised that Google Colaboratory is a great platform to initially develop, test and debug your code on, but constructive training should be done alternatively when handling these amounts of data. 
 
 
 
-[1] Nanne, https://github.com/Nanne/pytorch-NetVlad
-
-[2] Paper 4, scaling down deep learning
+[1] Nanne (2016), https://github.com/Nanne/pytorch-NetVlad
 
 
 
