@@ -10,7 +10,7 @@ Xander van Beurden & Thijs Bolscher
 The goal of the original NetVLAD project, was to quickly and accurately recognize the location where a picture is taken. To do so, a new generalized VLAD (Vector of Locally Aggregated Descriptors) layer was developed. This layer was named NetVLAD. This NetVLAD layer can simply be added to existing CNN structures such as AlexNet and VGG-16. For training & backpropagation to be executed, the authors came up with a smart weakly supervised ranking loss. The idea is to finally use the Google Street View Time Machine, so that locations where pictures are taken can be accurately placed over the whole world. 
 This project showed really promising outcomes on two benchmark datasets, including pictures taken in the Tokyo and Pittsburgh regions. From the figure below the challenge of place recognition already becomes clear. A well-performing place recognizer should be able to look through variability such as changing seasons, night/day, construction work and much more. 
 
-![alt text](https://github.com/thijsbolscher/DeepLearning_NetVLAD/tree/main/images/comparison.png)
+![comparison](https://user-images.githubusercontent.com/60961644/114835342-c1cb8b80-9dd1-11eb-8a4a-f7fd4d5eb3f1.PNG)
 
 In summary, the most important building blocks of this reproducibility project are: 
 - Loading in the data 
@@ -46,8 +46,7 @@ This is where the vector space does clearly come in. In our opinion, the paper d
 
 ## 7 Implementing the loss function and training
 This part of the project took us quite some time to unravel - which, in hindsight, was not needed. The well-explained theory behind the loss function makes it easy to understand what the author wants, but not necessarily how to implement this in code. Turns out that Pytorch has a function called 'TripletMarginLoss' which does all the work for you, as long as you give the function the margin you have in mind, and this margin value is once again clearly mentioned in Appendix A.
-![comparison](https://user-images.githubusercontent.com/60961644/114835342-c1cb8b80-9dd1-11eb-8a4a-f7fd4d5eb3f1.PNG)
-![comparison](https://user-images.githubusercontent.com/60961644/114835405-d1e36b00-9dd1-11eb-854c-adf1cb3e9e0b.PNG)
+
 
 
 
