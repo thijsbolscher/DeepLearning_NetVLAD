@@ -71,7 +71,7 @@ Now we have talked about our progress, it is time to mention the great potential
 
 ![promise](https://user-images.githubusercontent.com/60961644/115024869-f702d700-9ec0-11eb-861e-d50c91ae54a6.PNG)
 
-As can be seen, NetVLAD performs much better on the four images depicted here, which is not a coincidence. In the figure below, the final recognition accuracy for different network structures is set out against each other, for both the pittsburgh and tokyo datasets (used for training and testing the model, before using actual Google Street View Time Machine).  Note that the red and magenta graphs that are also marked by $f_{VLAD}$ are the ones that trained on the new, complete NetVLAD model. 
+As can be seen, NetVLAD performs much better on the four images depicted here, which is not a coincidence. In the figure below, the final recognition accuracy for different network structures is set out against each other, for both the pittsburgh and tokyo datasets (used for training and testing the model, before using actual Google Street View Time Machine).  Note that the red and magenta graphs that are also marked by f<sub>VLAD</sub> are the ones that trained on the new, complete NetVLAD model. 
 
 
 
