@@ -65,6 +65,20 @@ Finally, the decision was made to train the network with Google Colaboratory pla
 
 Concluding, for the course it is quite interesting to look at all the different deep learning methods but without being able to handle the huge amounts of data that deep learning is usually concerned with, your network will never be able to train. As Aerospace students this was seen into practice as the paper with its methods and architecture was really clear, but we bumped into realizing the code. We realised that Google Colaboratory is a great platform to initially develop, test and debug your code on, but constructive training should be done alternatively when handling these amounts of data. 
 
+## 9 The promise of NetVLAD
+Now we have talked about our progress, it is time to mention the great potential of this model, by showing a set of examples from the paper. In the below image one finds in the first row a Query image; the image that the model should find a similar picture to. In the second row one sees what the NetVLAD model found, in the third row one finds the result the best VLAD-using model outputted. Note the challenges that come with such place recognition tasks. The network has to look through the differences in lighting, seasons, population, wild life and much more. 
+
+
+![promise](https://user-images.githubusercontent.com/60961644/115024869-f702d700-9ec0-11eb-861e-d50c91ae54a6.PNG)
+
+As can be seen, NetVLAD performs much better on the four images depicted here, which is not a coincidence. In the figure below, the final recognition accuracy for different network structures is set out against each other, for both the pittsburgh and tokyo datasets (used for training and testing the model, before using actual Google Street View Time Machine).  Note that the red and magenta graphs that are also marked by $f_{VLAD}$ are the ones that trained on the new, complete NetVLAD model. 
+
+
+
+![validation](https://user-images.githubusercontent.com/60961644/115025491-b5bef700-9ec1-11eb-970b-417e9a54b405.PNG)
+
+
+
 
 
 [1] Nanne (2019), https://github.com/Nanne/pytorch-NetVlad
