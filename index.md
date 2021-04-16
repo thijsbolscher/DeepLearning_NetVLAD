@@ -1,5 +1,3 @@
-![netvladstruct](https://user-images.githubusercontent.com/60961644/115023277-dafe3600-9ebe-11eb-8bd8-fe882fe53351.PNG)
-
 # NetVLAD
 
 ## Reproduction Project CS4240 Deep Learning
@@ -32,12 +30,16 @@ During this project we attempted to reproduce the accuracy measurements done in 
 The performance of NetVLAD that we focussed on was on the Pittsburgh 250k dataset. The dataset contains of 250,000 images taken in the Pittsburgh area. It was noticed that spending some time on the data in this dataset helps understanding some of the decisions made in the paper. Empirically, it was seen that the data was best put on the runtime disk memory and the RAM of the GPU could handle the running memory. It was mentioned in the paper that the data was divided into roughly three equal parts for training, testing and validation. After some research, it became apparent that this division was made by the authors and put into a .mat file that was extracted.  So before starting off with building our own dataloader, the data was retrieved from the dataset (available online) and looked at. Next, the dataloader was made. We soon realised that the dataset was too large to handle for the limited computing power and memory we had at hand (1 GPU) so the images had were resized, unlike in the paper. As it was unclear from the paper, some time also had to be invested into arranging this dataloader function as it differed for example for the query image set versus all other images.
 
 ## 3 Building the NetVLAD layer
-The building of the NetVLAD layer was quite a smooth operation. The construction of the layer is clearly explained in the paper. Moreover, for the CNNs, existing networks were directly uploaded and used as they should be. In the paper it is clearly explained what parts of the network to use and how far to train them to reach similar (accuarcy) results as the paper. 
+The building of the NetVLAD layer was quite a smooth operation. The construction of the layer is clearly explained in the paper. A visualization of the NetVLAD layer on the top of a conventional Convolutional Neural Network like VGG-16 and AlexNet. 
+or the CNNs, existing networks were directly uploaded and used as they should be. In the paper it is clearly explained what parts of the network to use and how far to train them to reach similar (accuracy) results as the paper. 
 
+![netvladstruct](https://user-images.githubusercontent.com/60961644/115023277-dafe3600-9ebe-11eb-8bd8-fe882fe53351.PNG)
 
 
 ## 4 Clustering
 The concept of the centroid and clustering was for a long time a hard one to grasp for us. The author of the paper really writes from a point of view where you have experience with VLAD layers or at least tasks that are similar to this place recognition task, in which 'anchors' need to be placed in the vector space to be able to compare the descriptors of different images well. Moreover, from the paper it was not at all clear to us what exactly was this (size of the) cluster set. Out of how many and out of which query images should such a cluster consist? Although in the Appendix, the number of clusters adviced is mentioned, the whole concept of this clustering was still not clear enough to us. In the end we indeed set the number of clusters to 64, and used K-means (our decision, not mentioned in the paper as well!) to find the clusters and their centroids. Finally, it was pretty hard to find whether for us to find the clusters and their centroids, the images needed to go through the CNN only, or also the NetVLAD layer.
+
+F![centroid](https://user-images.githubusercontent.com/60961644/115023756-80190e80-9ebf-11eb-8aef-f2ebb374610e.PNG)
 
 ## 5 Potential positives and definite negatives
 During this course, we were warned many times that often papers use mathiness to impress rather than to explain. In this paper, when it comes to finding the potential positives and definite negatives for each query, this was definitely the case. Many terms were used to describe the same procedure over and over and these terms were never explained in plain and clear language. The best example of this is the mentioning of 'Euclidean distance', which in hindsight always referred to the geographical distance in the real world, but could have also meant a certain distance in the vector space which was so often mentioned in the NetVLAD report. 
